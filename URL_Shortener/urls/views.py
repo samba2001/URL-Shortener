@@ -19,9 +19,9 @@ def get_original_url(request, short_url):
         url_obj = URL.objects.get(shortened_url=short_url)
     except Exception as e:
         return JsonResponse({"status": "error", 'message': "there is no url with short_url provided"}, status=400)
-    if url_obj.expiration_timestamp >= timezone.now():
-        return JsonResponse({"status": "error", 'message': "the is expired"}, status=400)
-    else :
+    if url_obj.expiration_timestamp < timezone.now():
+        return JsonResponse({"status": "error", 'message': "the url sis expired"}, status=400)
+    else:
         access_obj = AccessLog(
             url=url_obj,
             timestamp=datetime.now(),
