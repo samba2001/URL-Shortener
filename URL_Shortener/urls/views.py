@@ -8,6 +8,8 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from django.db.models import Prefetch
 from .serializers import AccessLogSerializer
+from django.views.decorators.csrf import csrf_exempt
+
 
 
 
@@ -44,6 +46,7 @@ def get_url_analytics(request, short_url):
 
 
 @require_POST
+@csrf_exempt
 def shorten(request):
     url = request.POST.get('Original URL')
     expiration_time = request.POST.get('Expiration', 12)
