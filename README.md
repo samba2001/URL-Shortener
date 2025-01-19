@@ -1,10 +1,11 @@
 # URL-Shortener
 please run these commands after cloning the repo 
 go to the dir URL_Shortener
-  pip install -r requirements.txt
+  run the following commands
+  1. pip install -r requirements.txt
   and activate the urlenv (virtual env)
   run the project wuth the below command 
-  python manage.py runserver
+  2. python manage.py runserver
 
 this project has 3 apis 
   1. POST shorten/ to create a shorten url and store that in the database
