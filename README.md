@@ -1,6 +1,9 @@
 # URL-Shortener
 please run these commands after cloning the repo 
+go to the dir URL_Shortener
   pip install -r requirements.txt
+  and activate the urlenv (virtual env)
+  run the project wuth the below command 
   python manage.py runserver
 
 this project has 3 apis 
